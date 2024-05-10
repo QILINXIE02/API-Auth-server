@@ -8,9 +8,9 @@ const userModel = (sequelize, DataTypes) => {
     username: { type: DataTypes.STRING, required: true, unique: true },
     password: { type: DataTypes.STRING, required: true },
     role: {
-      type: DataTypes.ENUM('customer', 'writer', 'editor', 'admin'),
+      type: DataTypes.ENUM('customer', 'loyalty', 'retailer'),
       required: true,
-      defaultValue: 'user',
+      defaultValue: 'customer',
     },
     token: {
       type: DataTypes.VIRTUAL,
@@ -28,7 +28,6 @@ const userModel = (sequelize, DataTypes) => {
         const acl = {
           customer: ['buy'],
           loyalty: ['buy', 'create'],
-          // editor: ['read', 'create', 'update'],
           retailer: ['sell', 'create', 'update', 'delete'],
         };
         return acl[this.role];
@@ -43,6 +42,9 @@ const userModel = (sequelize, DataTypes) => {
 
   model.authenticateBasic = async function (username, password) {
     const user = await this.findOne({ where: { username } });
+    if (!user) {
+      throw new Error('User Not Found');
+    }
     const valid = await bcrypt.compare(password, user.password);
     if (valid) {
       return user;
@@ -53,7 +55,7 @@ const userModel = (sequelize, DataTypes) => {
   model.authenticateToken = async function (token) {
     try {
       const parsedToken = jwt.verify(token, SECRET);
-      const user = this.findOne({ where: { username: parsedToken.username } });
+      const user = await this.findOne({ where: { username: parsedToken.username } });
       if (user) {
         return user;
       }
