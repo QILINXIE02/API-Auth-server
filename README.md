@@ -1,7 +1,7 @@
 # API-Auth-server
-
 ## MochiDulce Creamery
 Welcome to the MochiDulce Creamery API! This API serves as the backend for an ice cream shop with a loyalty program. It manages user authentication, ice cream flavors, and sales data, providing a seamless experience for both customers and administrators.
+
 
 ## Retailers: Qilin Xie and Adam Jimenez
 
@@ -32,32 +32,22 @@ Sales Endpoints: Create and retrieve sales transactions, allowing administrators
 
 
 ## UML diagram: ![alt text](image-4.png)
-
 ## Getting Started
 To set up the API locally, follow these steps:
-
 1. Clone this repository to your local machine.
 2. Install dependencies using npm install.
 3. Set up your environment variables, including database connection details and JWT secret.
 4. Run the server using npm start.
-
 ### Technologies Used
-Node.js, Express.js, Sequelize ORM, PostgreSQL (or SQLite for local development). 
+Node.js, Express.js, Sequelize ORM, PostgreSQL (or SQLite for local development).
 JSON Web Tokens (JWT) for authentication
 
-## Contributing
 Contributions are welcome! If you have any suggestions, bug fixes, or feature requests, feel free to open an issue or submit a pull request.
 
 ## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-
-
-
 ### POST with /Signup  to create a user.: ![alt text](image.png)
 ### POST with /Signin  to login a user and receive a token.: ![alt text](image-1.png)
 ### Get with /secret  should require a valid bearer token.: ![alt text](image-2.png)
 ### Get with /users should require a valid token and “delete” permissions.: ![alt text](image-3.png)
-
-
