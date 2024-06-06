@@ -31,7 +31,7 @@ Ice Cream Endpoints: CRUD operations for managing ice cream flavors, including c
 Sales Endpoints: Create and retrieve sales transactions, allowing administrators to track sales data effectively.
 
 
-## UML diagram: ![alt text](image-4.png)
+## UML diagram: ![alt text](img/image-4.png)
 ## Getting Started
 To set up the API locally, follow these steps:
 1. Clone this repository to your local machine.
@@ -47,7 +47,11 @@ Contributions are welcome! If you have any suggestions, bug fixes, or feature re
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-### POST with /Signup  to create a user.: ![alt text](image.png)
-### POST with /Signin  to login a user and receive a token.: ![alt text](image-1.png)
-### Get with /secret  should require a valid bearer token.: ![alt text](image-2.png)
-### Get with /users should require a valid token and “delete” permissions.: ![alt text](image-3.png)
+### POST with /Signup  to create a user.: ![alt text](img/image.png)
+### POST with /Signin  to login a user and receive a token.: ![alt text](img/image-1.png)
+### Get with /secret  should require a valid bearer token.: ![alt text](img/image-2.png)
+### Get with /users should require a valid token and “delete” permissions.: ![alt text](img/image-3.png)
+
+6/6: 
+![alt text](img/image-5.png)
+
